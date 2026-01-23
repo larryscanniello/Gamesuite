@@ -18,7 +18,6 @@ import Account from './Components/Account';
 import './index.css';
 import Layout from './Components/Layout';
 import Feedback from './Components/Feedback';
-import HLQAResume from './Components/HLQAResume'
 
 const router = createBrowserRouter([
     {
@@ -36,7 +35,6 @@ const router = createBrowserRouter([
         { path: "/nickname", element: <NicknameRoute /> },
         { path: "/user/:username/", element: <ProtectedRoute><Account/></ProtectedRoute>},
         { path: "/feedback", element: <Feedback/>,},
-        { path: "/HLQAresume",element:<HLQAResume/>},
         { path: "/credits",element:<Credits/>},
           ]
         }

@@ -199,7 +199,7 @@ def bot_4(grid,bot4index,turn,plan,bot4evidence,mouseindex,a,bot4state,stoch,mod
         information_gain_array = state_logic.calculate_expected_entropy_reduction(bot4state,stoch,grid,a,bot4index)
         destinationindex = np.unravel_index(information_gain_array.argmax(), information_gain_array.shape)
         if bot4index == destinationindex:
-            information_gain_array[bot4index]-=10000
+            information_gain_array[bot4index]=-np.inf
             destinationindex = np.unravel_index(information_gain_array.argmax(), bot4state.shape)
         plan = bot_3_dynamic_UFCS(grid,bot4index,destinationindex,bot4state,4,stoch,bot4evidence,turn)
         return grid,bot4index,bot4evidence,plan,bot4state,mode
