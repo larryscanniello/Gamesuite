@@ -23,14 +23,33 @@ export default function Home() {
 
   return (
     <div
-      className="min-h-screen text-gray-100"
+      className="min-h-screen text-gray-100 font-mono"
       style={{
         background:
           'linear-gradient(180deg, #000000 0%, #020202 40%, #070707 100%)',
       }}
     >
-      <header className="py-8 text-center px-4">
-        <h1 className="text-4xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-400 to-yellow-300">
+      <header className="py-8 text-center px-4 relative">
+        {/* tasteful login/logout button top-right */}
+        <div className="absolute right-4 top-4">
+          {isAuthorized ? (
+            <button
+              onClick={handleLogout}
+              className="px-3 py-1.5 rounded-md bg-red-600 hover:bg-red-700 text-white text-sm shadow-sm transition"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              className="px-3 py-1.5 rounded-md bg-cyan-300 hover:bg-cyan-400 text-black text-sm shadow-sm transition"
+            >
+              Login
+            </Link>
+          )}
+        </div>
+
+        <h1 className="text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-indigo-200 to-cyan-200">
           Path Games AI
         </h1>
         
@@ -81,7 +100,7 @@ export default function Home() {
             <li>
               <Link
                 to="/seeoldfiregames"
-                className="block w-full text-left p-4 rounded-md bg-white/5 border border-white/6 hover:bg-white/6 transition transform hover:-translate-y-1"
+                className="block w/full text-left p-4 rounded-md bg-white/5 border border-white/6 hover:bg-white/6 transition transform hover:-translate-y-1"
               >
                 Fire Game Visualizer
               </Link>

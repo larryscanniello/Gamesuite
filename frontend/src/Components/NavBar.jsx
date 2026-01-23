@@ -19,7 +19,7 @@ export default function NavBar(props){
 
     return(
     <nav className='flex justify-between items-center pl-24 pt-3 pb-3 pr-24 border-gray-500 border-b-1 font-mono'>
-        <div><a className="font-bold pr-8" href='/'>Path Games</a></div>
+        <div><a className="font-bold pr-8 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-indigo-200 to-cyan-200" href='/'>Path Games AI</a></div>
         {(!props.logoOnly) && <div className="">
             {isAuthorized && !loggingOut ? <div className="flex justify-between items-center space-x-8"><Link className="hover:underline" to={"user/"+username}>{username}</Link>
             <button onClick={handleLogout} className="hover:underline">Logout</button></div> 

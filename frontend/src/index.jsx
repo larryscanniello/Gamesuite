@@ -20,10 +20,10 @@ import Layout from './Components/Layout';
 import Feedback from './Components/Feedback';
 
 const router = createBrowserRouter([
+    {path: '/', element: <Home />},
     {
       element: <Layout />,
       children: [
-        { path: "/", element: <Home /> },
         { path: "/firegame", element: <ProtectedRoute><Firegame /></ProtectedRoute> },
         { path: "/seeoldfiregames/:username/:gameID/", element: <ProtectedRoute><SeeOldFireGames /></ProtectedRoute> },
         { path: "/seeoldfiregames/", element: <ProtectedRoute><ViewFiregameList /></ProtectedRoute> },
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         { path: "/feedback", element: <Feedback/>,},
         { path: "/credits",element:<Credits/>},
           ]
-        }
+        },
 ])
 
 
